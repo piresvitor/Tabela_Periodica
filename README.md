@@ -11,7 +11,7 @@ Este projeto é uma tabela periódica interativa desenvolvida com HTML, CSS eScr
 - **Controle de Visibilidade:** Possibilidade de ocultar ou mostrar elementos específicos.
 - **Filtro por Classe:** Filtragem de elementos químicos por classes específicas (e.g., Gases Nobres).
 - **Legenda Interativa:** Destaque de elementos com uma legenda interativa.
-- **Visualização do Bloco f:** Separação especial para Lantanídeos e Actinídeos fora do corpo principal da tabela.
+- **Visualização do Bloco:** Separação especial para Lantanídeos e Actinídeos fora do corpo principal da tabela.
 - **Dicas de Uso:** Interface de dicas com opção de expandir/retrair para guiar o usuário.
 - **Cores Personalizadas:** Uso de variáveis CSS para personalização de cores.
 
@@ -21,3 +21,11 @@ Este projeto é uma tabela periódica interativa desenvolvida com HTML, CSS eScr
 - `style.css`: Responsável pela estilização da tabela, incluindo grid e temas.
 - `script.js`: Lida com a lógica de renderização e interatividade.
 - `elements.js`: Contém a base de dados dos elementos químicos.
+
+## 🙏 Créditos
+
+Este projeto foi criado com inspiração da Jade Coelho.  
+Confira seu trabalho e conteúdo para mais projetos:
+
+- [GitHub - Jade Coelho](https://github.com/JadeCoelho)
+- [YouTube - Jade Coelho](https://www.youtube.com/@jadevelop/videos)
