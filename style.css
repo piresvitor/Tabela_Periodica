@@ -1,5 +1,273 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
-*{
-    font-family: "Rubik", sans-serif;
+* {
+  font-family: "Rubik", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bgColor: #ebebeb;
+  --textColor: #333;
+  --bgColorEl: #ececec;
+  --bgColorBtn: #fbfbfb5a;
+  --lightShadow: #f8f8f8;
+  --darkShadow: #d7d7d7;
+  --btnColor: #7f6e5e57;
+  --nao-metais: #aa2394;
+  --gases-nobres: #4040aa;
+  --metais-alcalinos: #327745;
+  --metais-alcalino-terrosos: #a4550f;
+  --semimetais: #7d830b;
+  --halogenios: #197376;
+  --metais-de-transicao: #ab2441;
+  --metais-pos-transicao: #2f2f2f;
+  --lantanideos: #e34074;
+  --actinideos: #693426;
+}
+
+.dark-mode {
+  --bgColor: #333232;
+  --textColor: #dcdcdc;
+  --bgColorEl: #313131;
+  --bgColorBtn: #444444cc;
+  --lightShadow: #4a4a4a;
+  --darkShadow: #212020;
+  --btnColor: #ffcc00;
+  --nao-metais: #ff79e9;
+  --gases-nobres: #8f8fff;
+  --metais-alcalinos: #7fe69a;
+  --metais-alcalino-terrosos: #ffb472;
+  --semimetais: #e4ea73;
+  --halogenios: #5ae3e7;
+  --metais-de-transicao: #fb8d9e;
+  --metais-pos-transicao: #dcdcdc;
+  --lantanideos: #ffc1d4;
+  --actinideos: #dbb8af;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+
+.fd-col {
+  flex-direction: column;
+}
+
+body {
+  background-color: var(--bgColor);
+  padding: 1rem 0.5rem;
+}
+
+header {
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 1rem 0.5rem 1rem;
+}
+
+.table {
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  margin-bottom: 0.5rem;
+}
+
+.f-block {
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+}
+
+.element {
+  display: flex;
+  justify-content: center;
+  background-color: var(--bgColorEl);
+  box-shadow: -3px -3px 4.5px var(--lightShadow), 3px 3px 5px var(--darkShadow),
+    inset -1px -1px 4px color-mix(in srgb, var(--lightShadow), transparent 80%),
+    inset 1px 1px 4px color-mix(in srgb, var(--darkShadow), transparent 80%);
+  width: 60px;
+  height: 60px;
+  margin: 4.5px;
+  gap: 4px;
+  border-radius: 6px;
+  font-size: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.element .header {
+  justify-content: space-around;
+}
+
+.element h2,
+.element p {
+  text-align: center;
+  font-weight: 500;
+}
+
+.element .atomNum {
+  font-size: 9px;
+}
+.element .atomMass {
+  font-size: 8px;
+}
+
+.element p {
+  font-size: 7px;
+  text-transform: uppercase;
+}
+
+.nao-metais {
+  color: var(--nao-metais);
+}
+.gases-nobres {
+  color: var(--gases-nobres);
+}
+.metais-alcalinos {
+  color: var(--metais-alcalinos);
+}
+.metais-alcalino-terrosos {
+  color: var(--metais-alcalino-terrosos);
+}
+.semimetais {
+  color: var(--semimetais);
+}
+.halogenios {
+  color: var(--halogenios);
+}
+.metais-de-transicao {
+  color: var(--metais-de-transicao);
+}
+.metais-pos-transicao {
+  color: var(--metais-pos-transicao);
+}
+.lantanideos {
+  color: var(--lantanideos);
+}
+.actinideos {
+  color: var(--actinideos);
+}
+
+.btns {
+  gap: 1rem;
+}
+
+.btns .btn {
+  background-color: var(--bgColorBtn);
+  border: none;
+  padding: 13px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: -2px -2.5px 2.5px var(--lightShadow),
+    2.5px 2.5px 3.5px var(--darkShadow);
+}
+
+.btn i {
+  color: var(--btnColor);
+  font-size: 20px;
+}
+
+.dark-mode .btn-mode,
+.hide-elements .btn-visibility {
+  box-shadow: inset -2.3px -2.3px 5px var(--lightShadow),
+    inset 1.3px 1.3px 5px var(--darkShadow);
+}
+
+.hide-elements .element {
+  cursor: pointer;
+}
+
+.hide-elements .element > * {
+  opacity: 0;
+}
+.hide-elements .element.visible > * {
+  opacity: 1;
+}
+
+body:not(.hide-elements) .element:hover,
+.visible:hover {
+  transform: scale(1.5);
+}
+
+.legend {
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 700px;
+}
+
+.legend li {
+  margin-left: 15px;
+  list-style: square;
+  cursor: pointer;
+  font-size: 12.5px;
+}
+
+.tips {
+  left: 0.4rem;
+  bottom: 30%;
+}
+
+.tips,
+.show-tips,
+.tips ul {
+  position: absolute;
+}
+
+.tips .show-tips {
+  background-color: var(--textColor);
+  padding: 7px;
+  border-radius: 50%;
+  color: var(--bgColorEl);
+  border: none;
+  cursor: pointer;
+  bottom: -105px;
+  z-index: 999;
+}
+
+.tips ul {
+  font-size: 12px;
+  background-color: var(--lightShadow);
+  padding: 20px 25px 20px 35px;
+  border-radius: 14px;
+  box-shadow: 2px 5px 8px var(--darkShadow);
+  margin-left: 15px;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  width: 500px;
+}
+
+.tips ul.opened {
+  transform: translateX(0);
+}
+
+.tips ul li {
+  color: var(--textColor);
+  line-height: 20px;
+}
+
+.tips ul li::marker {
+  color: var(--btnColor);
+}
+
+footer {
+  width: 100%;
+  text-align: right;
+  font-size: 11px;
+  opacity: 0.8;
+  padding: 0.5rem 0.3rem;
+}
+
+footer,
+footer a {
+  color: var(--textColor);
+}
+
+footer a {
+  text-decoration: none;
+  font-weight: 500;
+  padding-left: 0.1rem;
+}
+
+footer a:hover {
+  color: var(--metais-alcalinos);
 }
